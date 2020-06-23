@@ -1,0 +1,67 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Andrew Start */
+.card{
+    margin: 10px;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.card-header, .card-title{
+    font-family: futura-pt, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+body{
+    background-color: #F6C143;
+}
+.p-wrapper{
+    display: flex;
+}
+p{
+    font-family: futura-pt,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
