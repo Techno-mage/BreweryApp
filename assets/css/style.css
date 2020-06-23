@@ -1,42 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Andrew Start */
 .card{
     margin: 10px;
@@ -64,4 +26,19 @@ p{
 
 
 
+#search-elements{
+    display:flex;
+}
+#search-bar{
+    width: 70vw;
+}
+#search-button{
+    width: 20vw;
+   padding:0;
+  }
 
+.btn-secondary{
+    width:45vw;
+    margin: 5px;
+    margin-left: 0px;
+}
