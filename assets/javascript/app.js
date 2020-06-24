@@ -14,6 +14,7 @@ function searchBreweries(target){
     })
 };
 
+
 //searchBreweries();
 
 $("#search-button").on("click", function(){
@@ -53,3 +54,4 @@ function displayResults(){
 
     }
 }
+
