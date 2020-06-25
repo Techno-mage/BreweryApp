@@ -90,12 +90,28 @@ function initMap(target) {
 
         //var area = new google.maps.latLng(result.latitude, result.longitude);
         marker = new google.maps.Marker({position: area});
+        console.log(marker);
+      } else{
+        // aquire cordinates from geocode
+        let target = result.street + " " + result.city;
+        geocoder.geocode({ 'address': target }, function (response, status) {
+          if (status === 'OK') {
+            var area = {lat:  response[0].geometry.location.lat(), lng:  response[0].geometry.location.lng()}
+            marker = new google.maps.Marker({position: area});
+            console.log(marker);
+          } else {
+            console.log('Geocode was not successful for the following reason: ' + status);
+          }
+        });
       }
       //create marker with cordinates set to that from our brewery
 
       // add marker to the map.
       if (marker){
+        //TODO: add information to the marker
+
         marker.setMap(map);
+        console.log("marker placed")
       }
 
     }
