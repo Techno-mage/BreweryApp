@@ -163,12 +163,12 @@ function initMap(target) {
     //create a handler function that handles the button click
       //two elements card and map and we toggle them depending on the button that is clicked. 
       function showMap(){      
-        $('.card').css('display', 'none');
+        $('#info-card').css('display', 'none');
         $('#mapView').css('display', 'block');
       };
     function hideMap() {
       $('#mapView').css('display', 'none');
-      $('.card').css('display', 'block');
+      $('#info-card').css('display', 'block');
     }
 
 //Create a function toggleMap
