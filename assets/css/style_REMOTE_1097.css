@@ -5,6 +5,10 @@
     border-radius: 4px;
 }
 
+body{
+    background-color: #F5C043;
+    display: inline;
+}
 
 .card-header, .card-title{
     font-family: futura-pt, sans-serif;
@@ -29,9 +33,6 @@ p, input, .btn-secondary, .btn-outline-success{
     height: 100vh;
 }
 
-#mapView {
-    height:100%;
-}
 
 #search-elements{
     display:flex;
