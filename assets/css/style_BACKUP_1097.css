@@ -5,6 +5,13 @@
     border-radius: 4px;
 }
 
+<<<<<<< HEAD
+=======
+body{
+    background-color: #F5C043;
+    display: inline;
+}
+>>>>>>> 1509d31b597e2188f3334975e02089a797026ef5
 
 .card-header, .card-title{
     font-family: futura-pt, sans-serif;
