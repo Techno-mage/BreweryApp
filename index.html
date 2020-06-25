@@ -16,27 +16,32 @@
       <nav class="navbar navbar-light bg-light" id="navbar">
           <form class="form-inline">
             <div id="search-elements">
-              <input class="form-control mr-2" type="text" placeholder="Search" id="search-bar">
+              <input class="form-control mr-2" type="text" placeholder="Enter your City or State" id="search-bar">
             <button class="btn btn-outline-success my-2 my-0" type="submit" id="search-button">Search</button>
             </div>
-          </form>
+            </form>
           <div class="btn-group" role="group" aria-label="Basic example">
-              <button type="button" class="btn btn-secondary">Map View</button>
+              <button type="button" class="btn btn-secondary" id="mapView">Map View</button>
               <button type="button" class="btn btn-secondary">List View</button>
-             
-            </div>
+          </div>
         </nav>
   </header>  
 
+  <section class="map-view">
+    <div class="map-display" id="mapDisplay">
+
+    </div>
+  </section>
+
     <section class="info-card" id="info-card">
         <div class="card">
-            <h5 class="card-header">Brewery Name</h5>
+            <h5 class="card-header" id="breweryName">Brewery Name</h5>
             <div class="card-body">
-                <h6 class="card-title">Minneapolis, MN</h6>
-                <p class="card-text">987 Laurel Lee, Minneapolis, MN</p>
+                <h6 class="card-title" id="cityState">Minneapolis, MN</h6>
+                <p class="card-text" id="address">987 Laurel Lee, Minneapolis, MN</p>
                 <div class="p-wrapper">
-                    <p class="card-text">Phone: <span></span></p>
-                    <p class="card-text">Website: <a id="websiteLink" href=""></a></p>
+                    <p class="card-text">Phone: <span class="phone" id="phone"></span></p>
+                    <p class="card-text">Website: <a id="websiteLink" href="#"></a></p>
                 </div>
             </div>
         </div>
@@ -45,10 +50,11 @@
     
     
     
-    
-    
-    
-    
+
+
+
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
