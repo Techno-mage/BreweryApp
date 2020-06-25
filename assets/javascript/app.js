@@ -8,6 +8,8 @@ function searchBreweries(target) {
     console.log(response);
     results = response;
     displayResults();
+    initMap(target);
+    
   })
 };
 
@@ -55,7 +57,7 @@ function displayResults() {
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
 var map, infoWindow;
-function initMap() {
+function initMap(target) {
 
   // map options
   var mapProp = {
@@ -66,7 +68,7 @@ function initMap() {
   map = new google.maps.Map(document.getElementById("mapDisplay"), mapProp);
   infoWindow = new google.maps.InfoWindow;
   var geocoder = new google.maps.Geocoder();
-  geocoder.geocode({ 'address': "New York" }, function (results, status) {
+  geocoder.geocode({ 'address': target }, function (results, status) {
     if (status === 'OK') {
       map.setCenter(results[0].geometry.location);
       console.log(results);
@@ -74,6 +76,48 @@ function initMap() {
       console.log('Geocode was not successful for the following reason: ' + status);
     }
   });
+
+  function addMarkers(){
+
+    //for each brewery in the list of breweries
+    for (result of results){
+      var marker= null;
+      //get latitude and longitude OR Geocode by their street address
+      console.log(typeof result.latitude);
+      console.log(typeof result.longitude);
+      if (result.latitude && result.longitude){
+        var area = {lat: parseFloat(result.latitude), lng: parseFloat(result.longitude)};
+
+        //var area = new google.maps.latLng(result.latitude, result.longitude);
+        marker = new google.maps.Marker({position: area});
+        console.log(marker);
+      } else{
+        // aquire cordinates from geocode
+        let target = result.street + " " + result.city;
+        geocoder.geocode({ 'address': target }, function (response, status) {
+          if (status === 'OK') {
+            var area = {lat:  response[0].geometry.location.lat(), lng:  response[0].geometry.location.lng()}
+            marker = new google.maps.Marker({position: area});
+            console.log(marker);
+          } else {
+            console.log('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+      }
+      //create marker with cordinates set to that from our brewery
+
+      // add marker to the map.
+      if (marker){
+        //TODO: add information to the marker
+
+        marker.setMap(map);
+        console.log("marker placed")
+      }
+
+    }
+
+  }
+  addMarkers();
 
 //   // Try HTML5 geolocation.
 //   if (navigator.geolocation) {
