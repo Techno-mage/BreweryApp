@@ -8,6 +8,7 @@ function searchBreweries(target) {
     console.log(response);
     results = response;
     displayResults();
+    initMap(target);
   })
 };
 
@@ -55,7 +56,7 @@ function displayResults() {
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
 var map, infoWindow;
-function initMap() {
+function initMap(target) {
 
   // map options
   var mapProp = {
@@ -66,7 +67,7 @@ function initMap() {
   map = new google.maps.Map(document.getElementById("mapDisplay"), mapProp);
   infoWindow = new google.maps.InfoWindow;
   var geocoder = new google.maps.Geocoder();
-  geocoder.geocode({ 'address': "New York" }, function (results, status) {
+  geocoder.geocode({ 'address': target }, function (results, status) {
     if (status === 'OK') {
       map.setCenter(results[0].geometry.location);
       console.log(results);
