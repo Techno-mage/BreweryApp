@@ -5,6 +5,9 @@
     border-radius: 4px;
 }
 
+body{
+
+}
 
 .card-header, .card-title{
     font-family: futura-pt, sans-serif;
@@ -21,16 +24,9 @@ p, input, .btn-secondary, .btn-outline-success{
     font-style: normal;
 }
 
-.map-view{
-    display: none;
-}
-.map-display{
-    width: 100vw;
-    height: 100vh;
-}
-
 #mapView {
     height:100%;
+    display: none;
 }
 
 #search-elements{
