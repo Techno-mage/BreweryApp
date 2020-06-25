@@ -24,17 +24,16 @@
         </div>
       </form>
       <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-secondary">Map View</button>
-        <button type="button" class="btn btn-secondary">List View</button>
+        <button id="listButton" type="button" class="btn btn-secondary" onclick="showMap()">Map View</button>
+        <button id="mapButton" type="button" class="btn btn-secondary" onclick="hideMap()">List View</button>
       </div>
     </nav>
   </header>
 
   <section class="map-view" id="mapView">
-  
-      <div id="mapDisplay" style="width: 500px; height: 500px;"> 
-      </div>
-    
+    <!--Styled the width and height inside of the HTML Tag-->
+    <div id="mapDisplay" style="width: 100vw; height:100vh;"> 
+    </div>
   </section>
 
   <section class="info-card" id="info-card">
@@ -75,6 +74,9 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNw2dup2_xHRjLKzsXNzhX5RtrDbx99fY&callback=initMap">
+    </script>
   <script src="assets/javascript/app.js"></script>
 </body>
 
