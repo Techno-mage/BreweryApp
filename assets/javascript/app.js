@@ -35,7 +35,9 @@ function displayResults() {
     var site = result.website_url;
     var info = $("<div>").addClass("p-wrapper");
     var phoneEl = $("<p>").addClass("card-text").html("Phone: <span>" + phone + "</span>");
-    var siteEl = $("<p>").addClass("card-text").html("Website: <a>" + site + "</a>");
+    var siteEl = $("<a>").attr("href", site).addClass("card-text").html(site);
+    
+    
     info.append(phoneEl, siteEl);
     var body = $("<div>").addClass("card-body");
     body.append($("<h6>").addClass("card-title").text(city + ", " + state));
