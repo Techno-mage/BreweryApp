@@ -9,6 +9,7 @@ function searchBreweries(target) {
     results = response;
     displayResults();
     initMap(target);
+    
   })
 };
 
@@ -75,6 +76,32 @@ function initMap(target) {
       console.log('Geocode was not successful for the following reason: ' + status);
     }
   });
+
+  function addMarkers(){
+
+    //for each brewery in the list of breweries
+    for (result of results){
+      var marker= null;
+      //get latitude and longitude OR Geocode by their street address
+      console.log(typeof result.latitude);
+      console.log(typeof result.longitude);
+      if (result.latitude && result.longitude){
+        var area = {lat: parseFloat(result.latitude), lng: parseFloat(result.longitude)};
+
+        //var area = new google.maps.latLng(result.latitude, result.longitude);
+        marker = new google.maps.Marker({position: area});
+      }
+      //create marker with cordinates set to that from our brewery
+
+      // add marker to the map.
+      if (marker){
+        marker.setMap(map);
+      }
+
+    }
+
+  }
+  addMarkers();
 
 //   // Try HTML5 geolocation.
 //   if (navigator.geolocation) {
