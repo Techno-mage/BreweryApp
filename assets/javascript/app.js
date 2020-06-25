@@ -56,6 +56,7 @@ function displayResults() {
 // locate you.
 var map, infoWindow;
 function initMap() {
+
   // map options
   var mapProp = {
     center: new google.maps.LatLng(44.9778, -93.2650),
@@ -104,6 +105,24 @@ function initMap() {
 //     'Error: Your browser doesn\'t support geolocation.');
 //   infoWindow.open(map);
 // }
+// BUTTON TOGGLE FUNCTION FOR MAP VIEW
+
+//Create a function toggleMap
+    //function runs when mapView button is clicked on html using an onClick attribute
+    //initially hide the map
+    //create a handler function that handles the button click
+      //two elements card and map and we toggle them depending on the button that is clicked. 
+      function showMap(){      
+        $('.card').css('display', 'none');
+        $('#mapView').css('display', 'block');
+      };
+    function hideMap() {
+      $('#mapView').css('display', 'none');
+      $('.card').css('display', 'block');
+    }
+
+//Create a function toggleMap
+//function runs when mapView button is clicked on html using an onClick attribute
 
 
 
