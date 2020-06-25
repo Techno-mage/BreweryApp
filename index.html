@@ -1,31 +1,34 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Crack a Cold Brew</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.typekit.net/ute4wjl.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-  </head>
-  <body>
-    <header>
-      <nav class="navbar navbar-light bg-light" id="navbar">
-          <form class="form-inline">
-            <div id="search-elements">
-              <input class="form-control mr-2" type="text" placeholder="Enter your City or State" id="search-bar">
-            <button class="btn btn-outline-success my-2 my-0" type="submit" id="search-button">Search</button>
-            </div>
-            </form>
-          <div class="btn-group" role="group" aria-label="Basic example">
-              <button type="button" class="btn btn-secondary">Map View</button>
-              <button type="button" class="btn btn-secondary">List View</button>
-          </div>
-        </nav>
-  </header>  
+<head>
+  <title>Crack a Cold Brew</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.typekit.net/ute4wjl.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-light bg-dark" id="navbar">
+      <form class="form-inline">
+        <div id="search-elements">
+          <input class="form-control mr-2" type="text" placeholder="Enter your City or State" id="search-bar">
+          <button class="btn btn-outline-success my-2 my-0" type="submit" id="search-button">Search</button>
+        </div>
+      </form>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary">Map View</button>
+        <button type="button" class="btn btn-secondary">List View</button>
+      </div>
+    </nav>
+  </header>
 
   <section class="map-view" id="mapView">
     <div class="map-display" id="mapDisplay">
@@ -33,36 +36,46 @@
     </div>
   </section>
 
-    <section class="info-card" id="info-card">
-        <div class="card">
-            <h5 class="card-header" id="breweryName">Brewery Name</h5>
-            <div class="card-body">
-                <h6 class="card-title" id="cityState">Minneapolis, MN</h6>
-                <p class="card-text" id="address">987 Laurel Lee, Minneapolis, MN</p>
-                <div class="p-wrapper">
-                    <p class="card-text">Phone: <span class="phone" id="phone"></span></p>
-                    <p class="card-text">Website: <a id="websiteLink" href="#"></a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    
-    
-    
+  <section class="info-card" id="info-card">
+    <div class="card">
+      <h5 class="card-header" id="breweryName">Brewery Name</h5>
+      <div class="card-body">
+        <h6 class="card-title" id="cityState">Minneapolis, MN</h6>
+        <p class="card-text" id="address">987 Laurel Lee, Minneapolis, MN</p>
+        <div class="p-wrapper">
+          <p class="card-text">Phone: <span class="phone" id="phone"></span></p>
+       
+       
+          <p class="card-text">Website: <a id="websiteLink" href="#"></a></p>
+        
+      </div>
+    </div>
+  </section>
 
 
 
 
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/javascript/app.js"></script>
-  </body>
+
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="assets/javascript/app.js"></script>
+</body>
+
+
 </html>
