@@ -104,7 +104,9 @@ function initMap(target) {
         geocoder.geocode({ 'address': target }, function (response, status) {
           if (status === 'OK') {
             var area = {lat:  response[0].geometry.location.lat(), lng:  response[0].geometry.location.lng()}
+
             marker = new google.maps.Marker({position: area, map: map, Title: result.name});
+
             console.log(marker);
           } else {
             console.log('Geocode was not successful for the following reason: ' + status);
