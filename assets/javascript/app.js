@@ -17,10 +17,7 @@ function searchBreweries(target) {
   }
 
   $.ajax({
-    //tokenize target into city and state
-    
-    //if state is present add state to search queary. 
-    url: "https://api.openbrewerydb.org/breweries?by_city=" + cityState[0] + state+ "&by_type=micro&per_page=50",
+       url: "https://api.openbrewerydb.org/breweries?by_city=" + cityState[0] + state+ "&by_type=micro&per_page=50",
     method: "GET"
   }).then(function (response) {
     console.log(response);
