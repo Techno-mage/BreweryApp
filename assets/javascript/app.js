@@ -1,5 +1,5 @@
 // use geolocation here 
-window.onload = function(){
+window.onload = function () {
   searchBreweries("Minneapolis");
 }
 var results = [];
@@ -11,9 +11,10 @@ function searchBreweries(target) {
   }).then(function (response) {
     console.log(response);
     results = response;
+    clearResults();
     displayResults();
     initMap(target);
-    
+
   })
 };
 
@@ -42,8 +43,8 @@ function displayResults() {
     var info = $("<div>").addClass("p-wrapper");
     var phoneEl = $("<p>").addClass("card-text").html("Phone: <span>" + phone + "</span>");
     var siteEl = $("<a>").attr("href", site).addClass("card-text").html(site);
-    
-    
+
+
     info.append(phoneEl, siteEl);
     var body = $("<div>").addClass("card-body");
     body.append($("<h6>").addClass("card-title").text(city + ", " + state));
@@ -58,6 +59,15 @@ function displayResults() {
 
   }
 }
+function clearResults() {
+  $("div").remove('.card');
+}
+$("#listButton").on("click", function () {
+  hideMap();
+})
+$("#mapButton").on("click", function () {
+  showMap();
+})
 // Note: This example requires that you consent to location sharing when
 // prompted by your browser. If you see the error "The Geolocation service
 // failed.", it means you probably did not give permission for the browser to
@@ -84,21 +94,21 @@ function initMap(target) {
     }
   });
 
-  function addMarkers(){
+  function addMarkers() {
 
     //for each brewery in the list of breweries
-    for (result of results){
-      var marker= null;
+    for (result of results) {
+      var marker = null;
       //get latitude and longitude OR Geocode by their street address
       console.log(typeof result.latitude);
       console.log(typeof result.longitude);
-      if (result.latitude && result.longitude){
-        var area = {lat: parseFloat(result.latitude), lng: parseFloat(result.longitude)};
+      if (result.latitude && result.longitude) {
+        var area = { lat: parseFloat(result.latitude), lng: parseFloat(result.longitude) };
 
         //var area = new google.maps.latLng(result.latitude, result.longitude);
         marker = new google.maps.Marker({position: area, Title: result.name});
         console.log(marker);
-      } else{
+      } else {
         // aquire cordinates from geocode
         let target = result.street + " " + result.city;
         geocoder.geocode({ 'address': target }, function (response, status) {
@@ -116,7 +126,7 @@ function initMap(target) {
       //create marker with cordinates set to that from our brewery
 
       // add marker to the map.
-      if (marker){
+      if (marker) {
         //TODO: add information to the marker
 
         marker.setMap(map);
@@ -128,27 +138,27 @@ function initMap(target) {
   }
   addMarkers();
 
-//   // Try HTML5 geolocation.
-//   if (navigator.geolocation) {
-//     navigator.geolocation.getCurrentPosition(function (position) {
-//       var pos = {
-//         lat: position.coords.latitude,
-//         lng: position.coords.longitude
-//       };
+  //   // Try HTML5 geolocation.
+  //   if (navigator.geolocation) {
+  //     navigator.geolocation.getCurrentPosition(function (position) {
+  //       var pos = {
+  //         lat: position.coords.latitude,
+  //         lng: position.coords.longitude
+  //       };
 
-//       infoWindow.setPosition(pos);
-//       infoWindow.setContent('Location found.');
-//       infoWindow.open(map);
-//       map.setCenter(pos);
+  //       infoWindow.setPosition(pos);
+  //       infoWindow.setContent('Location found.');
+  //       infoWindow.open(map);
+  //       map.setCenter(pos);
 
 
-//     }, function () {
-//       handleLocationError(true, infoWindow, map.getCenter());
-//     });
-//   } else {
-//     // Browser doesn't support Geolocation
-//     handleLocationError(false, infoWindow, map.getCenter());
-//   }
+  //     }, function () {
+  //       handleLocationError(true, infoWindow, map.getCenter());
+  //     });
+  //   } else {
+  //     // Browser doesn't support Geolocation
+  //     handleLocationError(false, infoWindow, map.getCenter());
+  //   }
 }
 
 // function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -161,18 +171,18 @@ function initMap(target) {
 // BUTTON TOGGLE FUNCTION FOR MAP VIEW
 
 //Create a function toggleMap
-    //function runs when mapView button is clicked on html using an onClick attribute
-    //initially hide the map
-    //create a handler function that handles the button click
-      //two elements card and map and we toggle them depending on the button that is clicked. 
-      function showMap(){      
-        $('#info-card').css('display', 'none');
-        $('#mapView').css('display', 'block');
-      };
-    function hideMap() {
-      $('#mapView').css('display', 'none');
-      $('#info-card').css('display', 'grid');
-    }
+//function runs when mapView button is clicked on html using an onClick attribute
+//initially hide the map
+//create a handler function that handles the button click
+//two elements card and map and we toggle them depending on the button that is clicked. 
+function showMap() {
+  $('#info-card').css('display', 'none');
+  $('#mapView').css('display', 'block');
+};
+function hideMap() {
+  $('#mapView').css('display', 'none');
+  $('#info-card').css('display', 'grid');
+}
 
 //Create a function toggleMap
 //function runs when mapView button is clicked on html using an onClick attribute
