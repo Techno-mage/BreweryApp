@@ -73,12 +73,13 @@ $("#mapButton").on("click", function () {
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
 var map, infoWindow;
+
 function initMap(target) {
 
   // map options
   var mapProp = {
     center: new google.maps.LatLng(44.9778, -93.2650),
-    zoom: 10,
+    zoom: 12,
   };
   // new map
   map = new google.maps.Map(document.getElementById("mapDisplay"), mapProp);
@@ -105,15 +106,17 @@ function initMap(target) {
         var area = { lat: parseFloat(result.latitude), lng: parseFloat(result.longitude) };
 
         //var area = new google.maps.latLng(result.latitude, result.longitude);
-        marker = new google.maps.Marker({ position: area });
+        marker = new google.maps.Marker({position: area, Title: result.name});
         console.log(marker);
       } else {
         // aquire cordinates from geocode
         let target = result.street + " " + result.city;
         geocoder.geocode({ 'address': target }, function (response, status) {
           if (status === 'OK') {
-            var area = { lat: response[0].geometry.location.lat(), lng: response[0].geometry.location.lng() }
-            marker = new google.maps.Marker({ position: area });
+            var area = {lat:  response[0].geometry.location.lat(), lng:  response[0].geometry.location.lng()}
+
+            marker = new google.maps.Marker({position: area, map: map, Title: result.name});
+
             console.log(marker);
           } else {
             console.log('Geocode was not successful for the following reason: ' + status);
