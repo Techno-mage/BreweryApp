@@ -5,8 +5,19 @@ window.onload = function () {
 var results = [];
 
 function searchBreweries(target) {
+  var cityState = target.split(",");
+  var state = "";
+  console.log(cityState);
+  if (cityState[1]){
+    state = "&by_state=" + cityState[1].trim(); 
+    console.log(state)
+  }
+  else{
+    console.log("no state");
+  }
+
   $.ajax({
-    url: "https://api.openbrewerydb.org/breweries?by_city=" + target + "&by_type=micro&per_page=50",
+       url: "https://api.openbrewerydb.org/breweries?by_city=" + cityState[0] + state+ "&by_type=micro&per_page=50",
     method: "GET"
   }).then(function (response) {
     console.log(response);
@@ -22,9 +33,9 @@ function searchBreweries(target) {
 
 $("#search-button").on("click", function () {
   event.preventDefault();
-  console.log("button clicked");
+  //console.log("button clicked");
   var target = $("#search-bar").val();
-  console.log(target);
+  //console.log(target);
   searchBreweries(target);
   //displayResults();
 })
@@ -34,9 +45,9 @@ function displayResults() {
   for (result of results) {
     var name = result.name;
     var street = result.street;
-    console.log(result.city)
+    //console.log(result.city)
     var city = result.city;
-    console.log(city)
+    //console.log(city)
     var state = result.state;
     var phone = result.phone;
     var site = result.website_url;
