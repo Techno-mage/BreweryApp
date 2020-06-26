@@ -85,6 +85,7 @@ $("#mapButton").on("click", function () {
 // locate you.
 var map, infoWindow;
 
+
 function initMap(target) {
 
   // map options
@@ -104,12 +105,24 @@ function initMap(target) {
       console.log('Geocode was not successful for the following reason: ' + status);
     }
   });
+  /*
+  var brewInfo = result.name + '<br>' + result.street + " " + result.city + " " + result.state + '<br>' + result.phone + '<br>' + result.website_url;
+
+  var infowindow = new google.maps.InfoWindow({
+    content: brewInfo
+  });*/
+
 
   function addMarkers() {
 
     //for each brewery in the list of breweries
-    for (result of results) {
+    for (const result of results) {
       var marker = null;
+      const brewInfo = result.name + '<br>' + result.street + " " + result.city + " " + result.state + '<br>' + result.phone + '<br>' + result.website_url;
+
+      const infowindow = new google.maps.InfoWindow({
+        content: brewInfo
+      });
       //get latitude and longitude OR Geocode by their street address
       console.log(typeof result.latitude);
       console.log(typeof result.longitude);
@@ -117,32 +130,45 @@ function initMap(target) {
         var area = { lat: parseFloat(result.latitude), lng: parseFloat(result.longitude) };
 
         //var area = new google.maps.latLng(result.latitude, result.longitude);
-        marker = new google.maps.Marker({position: area, Title: result.name});
+        marker = new google.maps.Marker({position: area, map: map, Title: result.name});
+        const newMarker = marker;
+        newMarker.addListener('click', function() {
+          infowindow.open(map, newMarker)});
         console.log(marker);
-      } else {
+        
+      } else { //ToDo:fix this
+
+
         // aquire cordinates from geocode
         let target = result.street + " " + result.city;
+        console.log(target);
         geocoder.geocode({ 'address': target }, function (response, status) {
           if (status === 'OK') {
             var area = {lat:  response[0].geometry.location.lat(), lng:  response[0].geometry.location.lng()}
 
             marker = new google.maps.Marker({position: area, map: map, Title: result.name});
-
+            const newMarker = marker;
+            newMarker.addListener('click', function() {
+              infowindow.open(map, newMarker)});
             console.log(marker);
+            
           } else {
             console.log('Geocode was not successful for the following reason: ' + status);
           }
         });
-      }
+      } 
       //create marker with cordinates set to that from our brewery
 
       // add marker to the map.
+      /*
       if (marker) {
+        marker.addListener('click', function() {
+          infowindow.open(map, marker)});
         //TODO: add information to the marker
 
         marker.setMap(map);
         console.log("marker placed")
-      }
+      }*/
 
     }
 
