@@ -74,6 +74,7 @@ $("#mapButton").on("click", function () {
 // locate you.
 var map, infoWindow;
 
+
 function initMap(target) {
 
   // map options
@@ -93,6 +94,13 @@ function initMap(target) {
       console.log('Geocode was not successful for the following reason: ' + status);
     }
   });
+  
+  var brewInfo = result.name + '<br>' + result.street + " " + result.city + " " + result.state + '<br>' + result.phone + '<br>' + result.website_url;
+
+  var infowindow = new google.maps.InfoWindow({
+    content: brewInfo
+  });
+
 
   function addMarkers() {
 
@@ -108,6 +116,8 @@ function initMap(target) {
         //var area = new google.maps.latLng(result.latitude, result.longitude);
         marker = new google.maps.Marker({position: area, Title: result.name});
         console.log(marker);
+        marker.addListener('click', function() {
+          infowindow.open(map, marker)});
       } else {
         // aquire cordinates from geocode
         let target = result.street + " " + result.city;
@@ -116,8 +126,9 @@ function initMap(target) {
             var area = {lat:  response[0].geometry.location.lat(), lng:  response[0].geometry.location.lng()}
 
             marker = new google.maps.Marker({position: area, map: map, Title: result.name});
-
             console.log(marker);
+            marker.addListener('click', function() {
+              infowindow.open(map, marker)});
           } else {
             console.log('Geocode was not successful for the following reason: ' + status);
           }
