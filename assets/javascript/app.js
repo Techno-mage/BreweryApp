@@ -168,7 +168,7 @@ function initMap(target) {
       };
     function hideMap() {
       $('#mapView').css('display', 'none');
-      $('#info-card').css('display', 'block');
+      $('#info-card').css('display', 'grid');
     }
 
 //Create a function toggleMap
