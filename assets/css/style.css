@@ -1,4 +1,11 @@
 /* Andrew Start */
+#navbar{
+    display: grid;
+    grid-template-columns: 1fr;
+    margin:auto;
+}
+
+
 .card{
     margin: 10px;
     background-color: white;
@@ -6,7 +13,7 @@
 }
 
 body{
-
+background-color: #7A2D28;
 }
 
 .card-header, .card-title{
@@ -16,7 +23,7 @@ body{
 }
 
 .p-wrapper{
-    display: flex;
+    display: block;
 }
 p, input, .btn-secondary, .btn-outline-success{
     font-family: futura-pt,sans-serif;
@@ -36,7 +43,7 @@ p, input, .btn-secondary, .btn-outline-success{
     width: 70vw;
 }
 #search-button{
-    width: 20vw;
+    width: 19vw;
    padding:0;
   }
 
@@ -53,6 +60,15 @@ p, input, .btn-secondary, .btn-outline-success{
         display:grid;
         grid-template-columns: 1fr;
     }
+    #search-button{
+        width:22vw;
+    }
+
+}
+@media (min-width:768px){
+    #search-button{
+        width:24vw;
+    }
 }
 
 @media (min-width:992px){
@@ -60,5 +76,13 @@ p, input, .btn-secondary, .btn-outline-success{
         width:75vw;
         display:grid;
         grid-template-columns: 1fr 1fr;
+    }
+    #search-button{
+        width:25vw;
+    }
+}
+@media (min-width:1200px){
+    #search-button{
+        width:26vw;
     }
 }

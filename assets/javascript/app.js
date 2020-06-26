@@ -1,3 +1,7 @@
+// use geolocation here 
+window.onload = function(){
+  searchBreweries("Minneapolis");
+}
 var results = [];
 
 function searchBreweries(target) {
@@ -37,7 +41,9 @@ function displayResults() {
     var site = result.website_url;
     var info = $("<div>").addClass("p-wrapper");
     var phoneEl = $("<p>").addClass("card-text").html("Phone: <span>" + phone + "</span>");
-    var siteEl = $("<p>").addClass("card-text").html("Website: <a>" + site + "</a>");
+    var siteEl = $("<a>").attr("href", site).addClass("card-text").html(site);
+    
+    
     info.append(phoneEl, siteEl);
     var body = $("<div>").addClass("card-body");
     body.append($("<h6>").addClass("card-title").text(city + ", " + state));
@@ -157,12 +163,12 @@ function initMap(target) {
     //create a handler function that handles the button click
       //two elements card and map and we toggle them depending on the button that is clicked. 
       function showMap(){      
-        $('.card').css('display', 'none');
+        $('#info-card').css('display', 'none');
         $('#mapView').css('display', 'block');
       };
     function hideMap() {
       $('#mapView').css('display', 'none');
-      $('.card').css('display', 'block');
+      $('#info-card').css('display', 'grid');
     }
 
 //Create a function toggleMap
