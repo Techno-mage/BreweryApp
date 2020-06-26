@@ -3,7 +3,6 @@
     display: grid;
     grid-template-columns: 1fr;
     margin:auto;
-    color: khaki;
 }
 
 
@@ -14,7 +13,7 @@
 }
 
 body{
-background-image: linear-gradient(#FFBA00,#FA9000);
+background-image: radial-gradient( #FFBA00,#FA9000);
 }
 
 .card-header, .card-title{
