@@ -41,16 +41,23 @@ p, input, .btn-secondary, .btn-outline-success{
 }
 #search-bar{
     width: 70vw;
+    background-color: transparent;
+    color:white;
+    
 }
 #search-button{
     width: 19vw;
    padding:0;
+   color: white;
+   border-color: white;
   }
 
 .btn-secondary{
     width:45vw;
     margin: 5px;
     margin-left: 0px;
+    background-color: transparent;
+    border-color: white;
 }
 
 @media (min-width:576px){
