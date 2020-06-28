@@ -224,6 +224,18 @@ function hideMap() {
 //Create a function toggleMap
 //function runs when mapView button is clicked on html using an onClick attribute
 
+//WELCOME PAGE JS
+//when you click no, link to 
+var noButton = $('#no');
+noButton.click(function() {
+ window.location.href = "https://www.cocacola.com";
+});
 
+//SWUP.JS animation for page transition if hit yes
 
+const swup = new Swup();
 
+var yesButton = $('#yes');
+// yesButton.click(function() {
+//   window.location.href = "./index.html"
+// })

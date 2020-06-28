@@ -1,4 +1,4 @@
-/* Andrew Start */
+/* INDEX STYLES*/
 #navbar{
     display: grid;
     grid-template-columns: 1fr;
@@ -53,6 +53,64 @@ p, input, .btn-secondary, .btn-outline-success{
     margin-left: 0px;
 }
 
+/* WELCOME PAGE */
+
+#intro{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 2fr 1fr 1fr;
+}
+
+h4{
+    font-family: futura-pt, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: white;
+    text-align: center;
+    font-size: 1.4rem; 
+}
+label{
+    font-family: futura-pt, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: white;
+}
+.enter-form{
+    text-align: center;
+    margin: 10px auto;
+}
+.welcome-button{
+    background-color: transparent;
+    font-family: futura-pt, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: white;
+    border: 1px solid white;
+    margin: 10px;
+    width: 3rem;
+    height: 1.5rem;
+}
+
+.welcome-button:hover{
+    background-color: white;
+    color: #FA9000;
+}
+
+/* SWUP TRANSITIONS */
+
+.transition-fade{
+    transition: .9s;
+    opacity: 1;
+}
+
+html.is-animating .transition-fade{
+    opacity: 0;
+    transform: translateY(-800px);
+}
+
+/* MEDIA QUERIES */
 @media (min-width:576px){
     .info-card{
         width:67vw;
