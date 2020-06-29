@@ -13,69 +13,52 @@
   <link rel="stylesheet" href="https://use.typekit.net/ute4wjl.css">
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+<body class="welcome">
+    <script>const swup = new Swup();</script>
+<main id="swup" class="transition-fade">
+    <section id="intro">
+        <div>
 
-<body>
-  <header>
-    <nav class="navbar navbar-light bg-dark" id="navbar">
-      <form class="form-inline">
-        <div id="search-elements">
-          <input class="form-control mr-2" type="text" placeholder="City, State (Ex: Minneapolis, Minnesota)" id="search-bar">
-          <button class="btn btn-outline-success" type="submit" id="search-button">Search</button>
         </div>
-      </form>
-      <div class="btn-group" role="group" aria-label="Basic example">
-        <button id="mapButton" type="button" class="btn btn-secondary">Map View</button>
-        <button id="listButton" type="button" class="btn btn-secondary">List View</button>
-      </div>
-    </nav>
-  </header>
-
-  <section class="map-view" id="mapView">
-    <!--Styled the width and height inside of the HTML Tag-->
-    <div id="mapDisplay" style="width: 100vw; height:100vh;">
-    </div>
-  </section>
-
-  <section class="info-card" id="info-card">
-    <div class="card">
-      <h5 class="card-header" id="breweryName">Brewery Name</h5>
-      <div class="card-body">
-        <h6 class="card-title" id="cityState">Minneapolis, MN</h6>
-        <p class="card-text" id="address">987 Laurel Lee, Minneapolis, MN</p>
-        <div class="p-wrapper">
-          <p class="card-text">Phone: <span class="phone" id="phone"></span></p>
-
-          <div>
-            <p class="card-text">Website: <a id="websiteLink"></a></p>
-          </div>
+        <div class="logo" id="logo">
+            <img src="./assets/images/BREWLOC-updated.svg" alt="brewloc logo" class="logo-img" id="logoImg">
         </div>
-      </div>
-    </div>
-  </section>
+        <div></div>
+        <div class="intro-text">
+            <h4>Are You 21 Years Old?</h4>
+            <div class="enter-form">
+                <div class="radio">
+                    <!-- <label><input type="radio" name="no" checked>Yes</label> -->
+                    <a href="/app.html"><button type="submit" id="yes" class="welcome-button">Yes</button></a>
+                </div>
+                <div class="radio">
+                    <button type="submit" id="no" class="welcome-button">No</button>
+                    <!-- <label><input type="radio" name="no">No</label> -->
+                </div>
+            </div>
+        </div>
 
+    </section>
+</main>
 
+    <!-- <section id="video">
+        <video poster="./assets/images/poster.png" autoplay muted loop>
+            <source src="./assets/images/videos/170628_001.mp4" type="video/mp4">
+        </video>
+    </section> -->
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+ integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+ crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+ integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+ crossorigin="anonymous"></script>
+<script async defer
+ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNw2dup2_xHRjLKzsXNzhX5RtrDbx99fY&callback=initMap">
+ </script>
+<script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script> 
 
-
-
-
-
-
-
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNw2dup2_xHRjLKzsXNzhX5RtrDbx99fY&callback=initMap">
-    </script>
-  <script src="assets/javascript/app.js"></script>
 </body>
 
 
