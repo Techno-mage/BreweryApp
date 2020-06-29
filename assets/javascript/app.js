@@ -1,5 +1,6 @@
 // use geolocation here 
 window.onload = function () {
+  
   searchBreweries("Minneapolis");
 }
 var results = [];
