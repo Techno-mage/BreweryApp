@@ -5,6 +5,29 @@
     margin:auto;
 }
 
+.navbar{
+    background-color: transparent !important;
+}
+
+.btn {
+    background-color: transparent !important;
+    border: 2px solid white !important;
+}
+
+.btn:hover{
+    background-color: white !important;
+    color: #FA9000 !important;
+}
+
+#search-button{
+    color: white;
+}
+
+input, .btn-secondary, .btn-outline-success{
+    font-family: futura-pt,sans-serif;
+    font-weight: 480;
+    font-style: normal;
+}
 
 .card{
     margin: 10px;
@@ -25,7 +48,7 @@ background-image: radial-gradient( #FFBA00,#FA9000);
 .p-wrapper{
     display: block;
 }
-p, input, .btn-secondary, .btn-outline-success{
+p{
     font-family: futura-pt,sans-serif;
     font-weight: 380;
     font-style: normal;
@@ -60,7 +83,7 @@ p, input, .btn-secondary, .btn-outline-success{
     margin: auto;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 100px 2fr 1fr 1fr;
+    grid-template-rows: 100px 1fr 50px 1fr;
 }
 
 h4{
@@ -97,11 +120,16 @@ label{
     background-color: white;
     color: #FA9000;
 }
+.logo-img{
+    width: 68%;
+    display: block;
+    margin: auto;
+}
 
 /* SWUP TRANSITIONS */
 
 .transition-fade{
-    transition: .9s;
+    transition: .5s;
     opacity: 1;
 }
 
@@ -121,13 +149,32 @@ html.is-animating .transition-fade{
     #search-button{
         width:22vw;
     }
+    .welcome-button{
+        width: 6rem;
+        height: 2rem;
+    }
+    h4{
+        font-size: 1.55;
+    }
 
 }
 @media (min-width:768px){
     #search-button{
         width:24vw;
     }
+    .welcome-button{
+        width: 6.5rem;
+        font-size: 1rem;
+    }
+    h4{
+        font-size: 1.65rem;
+    }
+    .logo-img{
+        width: 55%;
+    }
 }
+
+
 
 @media (min-width:992px){
     .info-card{
@@ -138,9 +185,27 @@ html.is-animating .transition-fade{
     #search-button{
         width:25vw;
     }
+    .logo-img{
+        width: 48%;
+    }
+    h4{
+        font-size: 1.8rem;
+    }
+
 }
+
+
 @media (min-width:1200px){
     #search-button{
         width:26vw;
+    }
+    .logo-img{
+        width: 43%;
+    }
+}
+
+@media (min-width: 1500px){
+    .logo-img{
+        width: 35%;
     }
 }
