@@ -226,10 +226,10 @@ function hideMap() {
 
 //WELCOME PAGE JS
 //when you click no, link to 
-var noButton = $('#no');
-noButton.click(function() {
- window.location.href = "https://www.cocacola.com";
-});
+// var noButton = $('#no');
+// noButton.click(function() {
+//  window.location.href = "https://www.cocacola.com";
+// });
 
 //SWUP.JS animation for page transition if hit yes
 
